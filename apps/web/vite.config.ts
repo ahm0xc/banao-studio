@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import { devtools } from '@tanstack/devtools-vite'
 import tailwindcss from '@tailwindcss/vite'
+import { cloudflare } from '@cloudflare/vite-plugin'
+
 
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
 
@@ -12,6 +14,7 @@ export default defineConfig({
     devtools(),
     tailwindcss(),
     tanstackRouter({ target: 'solid', autoCodeSplitting: true }),
+    cloudflare(),
     solidPlugin(),
   ],
 })
