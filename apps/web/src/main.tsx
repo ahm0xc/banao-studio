@@ -1,0 +1,11 @@
+import { render } from 'solid-js/web'
+import { RouterProvider } from '@tanstack/solid-router'
+import { getRouter } from './router'
+
+const router = getRouter()
+
+const rootElement = document.getElementById('app')!
+
+if (!rootElement.innerHTML) {
+  render(() => <RouterProvider router={router} />, rootElement)
+}
