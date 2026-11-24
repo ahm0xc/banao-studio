@@ -19,15 +19,7 @@ export function UiProvider(props: { children: JSX.Element }) {
     setCaseId(null)
     const cal = document.getElementById('cal')
     if (!cal) return
-    setTimeout(() => {
-      goTo(cal)
-      setTimeout(() => {
-        const day =
-          cal.querySelector<HTMLButtonElement>("button[aria-selected='true']") ??
-          cal.querySelector<HTMLButtonElement>('button.av')
-        day?.focus({ preventScroll: true })
-      }, 900)
-    }, 0)
+    setTimeout(() => goTo(cal), 0)
   }
 
   return (
