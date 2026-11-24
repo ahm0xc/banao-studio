@@ -91,7 +91,7 @@ export const CASES: CaseStudy[] = [
     logo: '/assets/logo-jokuh.webp',
     meta: 'Personal AI - 5 Weeks',
     metaLong: 'Personal AI · built in 5 weeks',
-    heading: 'A cash-flow dashboard that replaced five spreadsheets',
+    heading: 'A private, AI-native app and workspace featuring a built-in AI assistant named OO.',
     metric: '$1.2M',
     result: 'pre-seed raised on the first version',
     win: 'pre-seed raised on the first version, six weeks after launch',
