@@ -5,19 +5,14 @@ import { Logo } from './primitives'
 export function SiteHeader() {
   const ui = useUi()
   let headRef!: HTMLElement
-  let lastY = 0
 
   onMount(() => {
     const onScroll = () => {
-      const y = window.scrollY
       const hero = document.getElementById('hero')
       const overHero = hero ? hero.getBoundingClientRect().bottom > 76 : false
-      const trayOpen = document.body.classList.contains('tray-open')
 
+      // Only the background changes: transparent over the hero, solid after it.
       headRef.classList.toggle('solid', !overHero)
-      headRef.classList.toggle('away', y > lastY + 4 && y > 600 && !trayOpen)
-      if (y < lastY - 4) headRef.classList.remove('away')
-      lastY = y
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()

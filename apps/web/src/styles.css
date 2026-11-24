@@ -82,7 +82,6 @@ a { color: inherit; }
 .head { position: fixed; z-index: 50; left: 0; right: 0; top: env(safe-area-inset-top, 0px); color: var(--white); transition: color 300ms var(--ease), background-color 300ms var(--ease), box-shadow 300ms var(--ease), transform 400ms var(--ease); }
 .head-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 76px; }
 .head.solid { color: var(--ink); background: rgba(247, 250, 254, 0.86); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); box-shadow: 0 1px 0 var(--line-soft); }
-.head.away { transform: translateY(-100%); }
 .logo { display: inline-flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 500; letter-spacing: -0.03em; text-decoration: none; }
 .logo .mk { width: 21px; height: 21px; }
 .nav { display: flex; gap: 32px; font-size: 15px; }
