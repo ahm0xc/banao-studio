@@ -46,7 +46,13 @@ export function SiteFooter() {
               >
                 Instagram
               </a>
-              <a href="#top">LinkedIn</a>
+              <a
+                href="https://x.com/banao_studio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                X
+              </a>
             </div>
           </div>
         </div>
