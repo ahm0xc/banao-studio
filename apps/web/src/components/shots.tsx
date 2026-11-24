@@ -301,6 +301,20 @@ export function OpsShot() {
   )
 }
 
+/** Case: a captured product screenshot, shown inside the same frame as the coded shots. */
+export function JokuhShot() {
+  return (
+    <img
+      class="shot-img"
+      src="/assets/case-jokuh.webp"
+      alt="Jokuh app home screen with its command bar, download button and desktop background"
+      width="1400"
+      height="1067"
+      loading="lazy"
+    />
+  )
+}
+
 /** Case: the Ledgerly cash-flow dashboard. */
 export function LedgerlyShot() {
   return (
@@ -380,169 +394,41 @@ export function LedgerlyShot() {
   )
 }
 
-/** Case: the Fitloop habit app. */
+/** Case: the Kabo AI scanning app. */
 export function FitloopShot() {
   return (
     <>
-      <div class="phone ui-pop">
-        <div>
-          <div class="ps">
-            <span>9:41</span>
-            <span>5G</span>
-          </div>
-          <span class="pm">Tuesday morning</span>
-          <span class="pt">Keep it going, Sara</span>
-          <HabitRing day="21" streak="day streak" />
-          <span class="wk7">
-            <i class="on">M</i>
-            <i class="on">T</i>
-            <i class="on">W</i>
-            <i class="on">T</i>
-            <i class="on">F</i>
-            <i>S</i>
-            <i>S</i>
-          </span>
-          <span class="btn">Start today's workout</span>
-        </div>
-      </div>
-      <div class="phone ui-pop" style={d(180)}>
-        <div>
-          <div class="ps">
-            <span>9:41</span>
-            <span>5G</span>
-          </div>
-          <span class="pm">This week</span>
-          <span class="pt">Your plan</span>
-          <span class="li done">
-            <i />
-            <span>Upper body</span>
-            <em>40 min</em>
-          </span>
-          <span class="li done">
-            <i />
-            <span>Cardio intervals</span>
-            <em>30 min</em>
-          </span>
-          <span class="li">
-            <i />
-            <span>Mobility</span>
-            <em>25 min</em>
-          </span>
-          <span class="li">
-            <i />
-            <span>Lower body</span>
-            <em>45 min</em>
-          </span>
-          <span class="btn">See full plan</span>
-        </div>
-      </div>
-      <div class="note-card ui-pop" style={{ ...d(420), left: '18px', bottom: '18px' }}>
-        <i>$</i>
-        <div>
-          <b>New subscriber</b>
-          <span>Annual plan, via the App Store</span>
-        </div>
-      </div>
+      <img
+        class="shot-phone"
+        src="/assets/case-fitloop-home.webp"
+        alt="Kabo AI home screen with categories and popular scanned products"
+        width="420"
+        height="913"
+        loading="lazy"
+      />
+      <img
+        class="shot-phone"
+        src="/assets/case-fitloop-search.webp"
+        alt="Kabo AI product search results for Greek nonfat plain yogurt"
+        width="420"
+        height="913"
+        loading="lazy"
+      />
     </>
   )
 }
 
-/** Case: the Clinicflow booking calendar. */
-export function ClinicflowShot() {
+/** Case: the FattyBee restaurant dashboard. */
+export function FattybeeShot() {
   return (
-    <>
-      <div class="win ui-pop">
-        <WindowBar url="book.clinicflow.app" />
-        <div class="win-b">
-          <div class="side">
-            <b>
-              <i />
-              Clinicflow
-            </b>
-            <span class="on">Calendar</span>
-            <span>Patients</span>
-            <span>Therapists</span>
-            <span>Reminders</span>
-            <span>Reports</span>
-          </div>
-          <div class="main">
-            <div class="mh">
-              <b>Downtown clinic</b>
-              <span>Week of Dec 8</span>
-            </div>
-            <div class="cal">
-              <span />
-              <span class="dh">Mon</span>
-              <span class="dh">Tue</span>
-              <span class="dh">Wed</span>
-              <span class="dh">Thu</span>
-              <span class="dh">Fri</span>
-              <span>9:00</span>
-              <span class="c d ui-pop" style={d(200)}>
-                A. Rivera
-              </span>
-              <span class="c a ui-pop" style={d(240)}>
-                Intake
-              </span>
-              <span class="c" />
-              <span class="c b ui-pop" style={d(280)}>
-                J. Chen
-              </span>
-              <span class="c a ui-pop" style={d(320)}>
-                M. Osei
-              </span>
-              <span>10:00</span>
-              <span class="c a ui-pop" style={d(360)}>
-                K. Patel
-              </span>
-              <span class="c b ui-pop" style={d(400)}>
-                Rehab
-              </span>
-              <span class="c d ui-pop" style={d(440)}>
-                L. Novak
-              </span>
-              <span class="c" />
-              <span class="c b ui-pop" style={d(480)}>
-                Follow-up
-              </span>
-              <span>11:00</span>
-              <span class="c" />
-              <span class="c a ui-pop" style={d(520)}>
-                S. Ali
-              </span>
-              <span class="c a ui-pop" style={d(560)}>
-                Intake
-              </span>
-              <span class="c d ui-pop" style={d(600)}>
-                R. Diaz
-              </span>
-              <span class="c" />
-              <span>12:00</span>
-              <span class="c b ui-pop" style={d(640)}>
-                T. Moyo
-              </span>
-              <span class="c" />
-              <span class="c a ui-pop" style={d(680)}>
-                Review
-              </span>
-              <span class="c a ui-pop" style={d(720)}>
-                E. Park
-              </span>
-              <span class="c d ui-pop" style={d(760)}>
-                N. Ito
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="note-card ui-pop" style={{ ...d(900), right: '18px', bottom: '18px' }}>
-        <i>SMS</i>
-        <div>
-          <b>Reminder sent to R. Diaz</b>
-          <span>Thu 11:00 with Dr. Rivera. Reply C to confirm</span>
-        </div>
-      </div>
-    </>
+    <img
+      class="shot-img"
+      src="/assets/case-fattybee.webp"
+      alt="FattyBee restaurant dashboard showing revenue, orders, ratings and recent feedback"
+      width="1200"
+      height="944"
+      loading="lazy"
+    />
   )
 }
 

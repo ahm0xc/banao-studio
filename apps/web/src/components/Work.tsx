@@ -1,13 +1,10 @@
-import { For } from 'solid-js'
+import { For, Show } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 import { CASES } from '../lib/content'
-import { useUi } from '../lib/ui'
-import { ArrowRight, CountUp, Line } from './primitives'
+import { CountUp, Line } from './primitives'
 import { Shot } from './shots'
 
 export function Work() {
-  const ui = useUi()
-
   return (
     <section class="pad" id="work" style={{ 'padding-top': '0' }}>
       <div class="wrap">
@@ -26,7 +23,9 @@ export function Work() {
                 </Shot>
                 <div class="case-txt">
                   <div class="case-name">
-                    <i>{study.letter}</i>
+                    <Show when={study.logo} fallback={<i>{study.letter}</i>}>
+                      <img class="case-logo" src={study.logo} alt="" width="34" height="34" />
+                    </Show>
                     <b>{study.name}</b>
                     <span>{study.meta}</span>
                   </div>
@@ -50,10 +49,6 @@ export function Work() {
                       </cite>
                     </p>
                   </div>
-                  <button class="tlink" type="button" onClick={() => ui.openCase(study.id)}>
-                    <span>Read the case</span>
-                    <ArrowRight />
-                  </button>
                 </div>
               </article>
             )}

@@ -1,9 +1,9 @@
 import type { Component } from 'solid-js'
 import {
-  ClinicflowShot,
+  FattybeeShot,
   FitloopShot,
   HabitPhones,
-  LedgerlyShot,
+  JokuhShot,
   OpsShot,
   TallyShot,
 } from '../components/shots'
@@ -11,9 +11,9 @@ import {
 export type Kind = 'saas' | 'app' | 'software'
 
 export const KINDS: Record<Kind, { long: string; price: number; short: string }> = {
-  saas: { long: 'SaaS platform', price: 14900, short: 'SaaS' },
-  app: { long: 'mobile app', price: 16900, short: 'Mobile app' },
-  software: { long: 'custom software build', price: 12900, short: 'Software' },
+  saas: { long: 'SaaS platform', price: 7900, short: 'SaaS' },
+  app: { long: 'mobile app', price: 8900, short: 'Mobile app' },
+  software: { long: 'custom software build', price: 5900, short: 'Software' },
 }
 
 export const KIND_ORDER: Kind[] = ['saas', 'app', 'software']
@@ -46,7 +46,7 @@ export const BUILD_ROWS: BuildRow[] = [
     description:
       'iOS and Android from one codebase, designed for retention and submitted to both stores for you.',
     ticks: ['React Native or Flutter', 'Push notifications and in-app purchases', 'App Store and Play Store launch'],
-    recent: { name: 'Fitloop', text: ', a fitness habits app built in 6 weeks' },
+    recent: { name: 'Kabo AI', text: ', a grocery-scanning app built in 6 weeks' },
     shot: HabitPhones,
   },
   {
@@ -65,6 +65,7 @@ export type CaseStudy = {
   id: string
   name: string
   letter: string
+  logo?: string
   meta: string
   metaLong: string
   heading: string
@@ -85,20 +86,21 @@ export type CaseStudy = {
 export const CASES: CaseStudy[] = [
   {
     id: 'ledgerly',
-    name: 'Ledgerly',
-    letter: 'L',
-    meta: 'Fintech SaaS · 5 weeks',
-    metaLong: 'Fintech SaaS · built in 5 weeks',
+    name: 'Jokuh',
+    letter: 'J',
+    logo: '/assets/logo-jokuh.webp',
+    meta: 'Personal AI - 5 Weeks',
+    metaLong: 'Personal AI · built in 5 weeks',
     heading: 'A cash-flow dashboard that replaced five spreadsheets',
     metric: '$1.2M',
     result: 'pre-seed raised on the first version',
     win: 'pre-seed raised on the first version, six weeks after launch',
     quote:
       'We went from a Notion doc to paying customers in five weeks. Our investors asked who our CTO was.',
-    person: 'Aarav Mehta',
-    role: 'founder',
-    face: '/assets/face-aarav.webp',
-    shot: LedgerlyShot,
+    person: 'Sean Rock',
+    role: 'Founder',
+    face: '/assets/face-sean.webp',
+    shot: JokuhShot,
     problem:
       'Agency owners were reconciling cash across five bank accounts in spreadsheets every Friday.',
     built:
@@ -107,14 +109,15 @@ export const CASES: CaseStudy[] = [
   },
   {
     id: 'fitloop',
-    name: 'Fitloop',
-    letter: 'F',
+    name: 'Kabo AI',
+    letter: 'K',
+    logo: '/assets/logo-kabo.webp',
     meta: 'Mobile app · 6 weeks',
     metaLong: 'Mobile app · built in 6 weeks',
-    heading: 'A habit app that keeps people training past week three',
+    heading: 'A food scanner that turns a label into a score you can read',
     metric: '10,000',
-    result: 'downloads in the first 60 days',
-    win: 'downloads in the first 60 days, rated 4.8 stars',
+    result: 'downloads in the first 90 days',
+    win: 'downloads in the first 90 days',
     quote:
       'The Friday demos changed everything. I always knew exactly where we were, and I never had to chase anyone.',
     person: 'Sara Kovac',
@@ -123,32 +126,33 @@ export const CASES: CaseStudy[] = [
     shot: FitloopShot,
     deep: true,
     problem:
-      'People drop new workout routines within three weeks. The founder had a coaching method but no product.',
+      'Shoppers stand in the aisle with a package in hand, and the label gives them nothing they can act on at a glance.',
     built:
-      'An iOS and Android habit app with streaks, adaptive weekly plans, push nudges and in-app subscriptions.',
+      'An iOS app with barcode and meal scanning, a 0 to 100 product score, plain-language notes on ingredients and additives, saved allergen and diet preferences, and a scan history.',
     stack: ['React Native', 'Expo', 'Supabase', 'RevenueCat'],
   },
   {
     id: 'clinicflow',
-    name: 'Clinicflow',
-    letter: 'C',
+    name: 'FattyBee',
+    letter: 'F',
+    logo: '/assets/logo-fattybee.webp',
     meta: 'Custom software · 4 weeks',
     metaLong: 'Custom software · built in 4 weeks',
-    heading: 'Online booking and reminders for a six-clinic physio chain',
-    metric: '70%',
-    result: 'less time spent on booking admin',
-    win: 'less time spent on booking admin',
+    heading: 'Online ordering, menu, and reservation system for all restaurant chains',
+    metric: '25%',
+    result: 'New customer increase',
+    win: 'new customer increase in the first quarter after launch',
     quote:
-      'Two agencies quoted us six months. Banao shipped in four weeks, and the code is genuinely clean.',
-    person: 'Daniel Reyes',
-    role: 'COO',
+      'Restaurant POS systems felt so scary until we planned FattyBee with Banao Studio, And they shipped it in only 4 weeks.',
+    person: 'Shafiqul',
+    role: 'CEO of Helium',
     face: '/assets/face-daniel.webp',
-    shot: ClinicflowShot,
+    shot: FattybeeShot,
     problem:
-      'A six-location physio chain booked patients by phone and tracked them in three spreadsheets.',
+      'Restaurant chains were taking orders by phone and running reservations, menus and pricing across three separate tools.',
     built:
-      'A scheduling and intake system with online booking, therapist calendars, SMS reminders and a dashboard per clinic.',
-    stack: ['Next.js', 'Postgres', 'Twilio', 'AWS'],
+      'An online ordering, menu and reservation system with a live kitchen queue, chain-wide menu management and a dashboard for every location.',
+    stack: ['Next.js', 'Postgres', 'Stripe', 'Twilio'],
   },
 ]
 
@@ -168,7 +172,7 @@ export const PLANS: Plan[] = [
   {
     id: 'sprint',
     label: 'Design Sprint',
-    amount: '$2,900',
+    amount: '$1,490',
     unit: 'one-time',
     sub: 'One week to validate the idea before you build it',
     action: 'Start with a sprint',
@@ -201,7 +205,7 @@ export const PLANS: Plan[] = [
   {
     id: 'growth',
     label: 'Growth Partner',
-    amount: '$5,500',
+    amount: '$2,490',
     unit: 'per month',
     sub: 'After launch, keep shipping without hiring yet',
     action: 'Talk about growth',
@@ -226,7 +230,7 @@ export const PROMISES = [
 export const FAQ = [
   {
     q: 'How much does a first version cost?',
-    a: 'Most builds land between $12,900 and $29,000 depending on scope. You get one fixed price in writing within 48 hours of your scope call, and it only changes if you add features.',
+    a: 'Most builds land between $5,900 and $8,900 depending on scope. You get one fixed price in writing within 48 hours of your scope call, and it only changes if you add features.',
   },
   {
     q: 'Can you really launch in six weeks?',

@@ -18,8 +18,8 @@ export function Hero() {
             </h1>
             <div class="hero-side">
               <p>
-                Banao designs and builds SaaS, mobile apps and custom software for founders. One fixed
-                price, a demo every Friday, and the code is yours.
+                Banao is an MVP studio that turns ideas into market-ready digital products with fast
+                delivery, fixed pricing, and full ownership.
               </p>
               <button class="cta light" type="button" onClick={() => ui.openBooking()}>
                 Book a free intro call <i aria-hidden="true">→</i>
@@ -33,7 +33,7 @@ export function Hero() {
               <b>
                 <MorphText text={ui.slots()} />
               </b>{' '}
-              open for January
+              open for December
             </span>
           </div>
         </div>
