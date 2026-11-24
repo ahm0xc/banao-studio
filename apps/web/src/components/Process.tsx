@@ -20,19 +20,35 @@ export function Process() {
 
     stepsRef.classList.add('live')
     const steps = Array.from(stepsRef.querySelectorAll<HTMLElement>('.step'))
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return
-          const index = steps.indexOf(entry.target as HTMLElement)
-          if (index >= 0) setStage(index)
-        })
-      },
-      { rootMargin: '-45% 0px -45% 0px' },
-    )
-    steps.forEach((step) => observer.observe(step))
-    setStage(0)
-    onCleanup(() => observer.disconnect())
+    let frame = 0
+
+    // Pick the last step whose top has crossed the viewport's mid-line. This is
+    // position-based rather than intersection-based, so it gives the same answer
+    // scrolling up as it does scrolling down.
+    const measure = () => {
+      frame = 0
+      const mid = window.innerHeight / 2
+      let next = 0
+      for (let i = 0; i < steps.length; i++) {
+        if (steps[i]!.getBoundingClientRect().top <= mid) next = i
+        else break
+      }
+      setStage(next)
+    }
+    const schedule = () => {
+      if (frame) return
+      frame = requestAnimationFrame(measure)
+    }
+
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    measure()
+
+    onCleanup(() => {
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+      if (frame) cancelAnimationFrame(frame)
+    })
   })
 
   const current = () => PROCESS_STEPS[stage()] ?? PROCESS_STEPS[0]!
