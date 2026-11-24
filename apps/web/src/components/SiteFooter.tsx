@@ -39,7 +39,13 @@ export function SiteFooter() {
             <div>
               <span class="label">Connect</span>
               <a href="#book">Book a call</a>
-              <a href="#top">X</a>
+              <a
+                href="https://www.instagram.com/banao.studio_"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
               <a href="#top">LinkedIn</a>
             </div>
           </div>
